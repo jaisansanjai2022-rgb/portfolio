@@ -171,21 +171,23 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 }
 .avatar-frame{
   width:320px;height:320px;border-radius:50%;position:relative;
-  background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink));
+  background:transparent;
   padding:3px;
-  animation:rotateBorder 8s linear infinite;
+  border:1px solid rgba(255,255,255,.08);
 }
 .avatar-inner{
   width:100%;height:100%;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,#1e293b,#0d1117);
+  background:transparent;
   display:flex;align-items:center;justify-content:center;
-  font-family:'Orbitron',sans-serif;font-size:80px;color:var(--cyan);
   position:relative;overflow:hidden;
 }
+.avatar-inner img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;border-radius:50%;
+  filter:none;mix-blend-mode:normal;image-rendering:auto;
+}
 .avatar-glow{
-  position:absolute;width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,245,255,.1),transparent 70%);
-  animation:breathe 4s ease infinite;
+  display:none;
 }
 .orbit{
   position:absolute;border-radius:50%;border:1px solid rgba(0,245,255,.15);
@@ -633,7 +635,10 @@ footer{
       <div class="avatar-glow"></div>
       <div class="avatar-frame">
         <div class="avatar-inner">
-          <span style="font-size:100px;filter:drop-shadow(0 0 20px var(--cyan))">⚙</span>
+          <picture>
+            <source srcset="profile.jpg" type="image/jpeg">
+            <img src="profile.svg" alt="Profile photo of Jaisan Sanjai" class="avatar-image">
+          </picture>
         </div>
       </div>
     </div>
@@ -651,8 +656,6 @@ footer{
     <div class="about-grid reveal">
       <div class="about-card">
         <p class="about-text">I'm a Mechanical Engineering student at Saranathan College of Engineering, Trichy — driven by curiosity at the intersection of engineering and technology.</p>
-        <p class="about-text">My work spans AI-powered healthcare applications, clinical management systems, and mechanical research — all unified by a mission to build smart, impactful tools for real people.</p>
-        <p class="about-text">Currently working as a Graduate Engineer Trainee at Aqua Sub, Coimbatore, while continuing to develop side projects in AI and web development.</p>
         <div class="about-detail">Trichy, Tamil Nadu, India</div>
         <div class="about-detail">jaisansanjai2022@gmail.com</div>
         <div class="about-detail">+91 6382945186</div>
